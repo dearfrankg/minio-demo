@@ -10,13 +10,13 @@ export const minioClient = new Minio.Client({
   secretKey: process.env.SECRET_KEY,
 });
 
-export const minioCreateBucket = async ({ bucket }) => {
+export const minioCreateBucket = async ({ bucket, region }) => {
   const exists = await minioClient.bucketExists(bucket);
   if (exists) {
     console.log(`Bucket ${bucket} exists.`);
   } else {
-    await minioClient.makeBucket(bucket, "us-west-1");
-    console.log(`Bucket ${bucket} created in "us-west-1`);
+    await minioClient.makeBucket(bucket, region);
+    console.log(`Bucket ${bucket} created in ${region}`);
   }
 };
 

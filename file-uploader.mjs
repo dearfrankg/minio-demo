@@ -3,7 +3,7 @@ import { minioCreateBucket, minioGetPresignedUrl, minioUploadFile } from "./mini
 const ONE_DAY = 24 * 60 * 60;
 
 try {
-  await minioCreateBucket({ bucket: "js-test-bucket" });
+  await minioCreateBucket({ bucket: "js-test-bucket", region: "us-west-1" });
 
   await minioUploadFile({
     bucket: "js-test-bucket",
