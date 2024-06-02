@@ -22,9 +22,9 @@ export const minioCreateBucket = async ({ bucket, region }) => {
 
 export const minioUploadFile = async (params) => {
   // overwrite if exists
-  const { bucket, destinationObject, sourceFile, metaData } = params;
-  await minioClient.fPutObject(bucket, destinationObject, sourceFile, metaData);
-  const message = `File ${sourceFile} uploaded as object ${destinationObject} in bucket ${bucket}`;
+  const { bucket, destinationObject, sourcePath, metaData } = params;
+  await minioClient.fPutObject(bucket, destinationObject, sourcePath, metaData);
+  const message = `File ${sourcePath} uploaded as object ${destinationObject} in bucket ${bucket}`;
   console.log(message);
 };
 

@@ -8,7 +8,7 @@ try {
   await minioUploadFile({
     bucket: "js-test-bucket",
     destinationObject: "my-package.json",
-    sourceFile: "package.json",
+    sourcePath: "package.json",
     metaData: {
       "Content-Type": "text/json",
       "X-Amz-Meta-Testing": 1234,
