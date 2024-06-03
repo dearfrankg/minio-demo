@@ -37,7 +37,7 @@ export const minioGetPresignedUrl = async (params) => {
       timeout,
       function (err, presignedUrl) {
         if (err) reject(err);
-        console.log(presignedUrl);
+        resolve(presignedUrl);
       }
     );
   });
